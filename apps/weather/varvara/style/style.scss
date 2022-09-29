@@ -1,0 +1,181 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #6ebae0;
+    margin:0;
+  .weather{
+    margin: 1rem;
+    padding-left: 1rem;
+    font-family: 'Pacifico', cursive;
+    
+  }  
+    
+    .buttons{
+        // border: 2px dashed red;
+        display: flex;
+        align-items: center;
+    }
+    .searchLocation{
+        // border: 2px dashed green;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-around;
+        -webkit-box-shadow: -10px 38px 49px 0px rgba(66, 68, 90, 1);
+            -moz-box-shadow: -10px 38px 49px 0px rgba(66, 68, 90, 1);
+            box-shadow: -10px 38px 49px 0px rgba(66, 68, 90, 1);
+        background-color: #9ADEFF;
+    }
+    .image {
+        // border: 2px dashed black;                     
+        display: flex;
+       margin: 0, 5rem;
+       padding: 1rem;
+    //   display: flex;
+    //    justify-content: end;
+     }
+    button{
+        // border: 2px dashed rgb(235, 22, 128);
+        box-shadow: 0px 1px 0px 0px rgba(66, 68, 90, 1);
+            background: #97DBFC;
+            background-color: #1B365C;
+            border-radius: 6px;
+            display: inline-block;
+            cursor: pointer;
+            color: #97DBFC;
+            font-family: Arial;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 6px 12px;
+            text-decoration: none;
+            margin: 1rem;
+    }
+
+    .Inputstyle{
+        padding: 2px;
+            font-size: 15px;
+            border-color: #1B365C;
+            background-color: rgba(255, 255, 255, 0.75);
+            color: #000000;
+            border-style: solid;
+            border-radius: 16px;
+            box-shadow: 0px 0px 5px rgba(98, 137, 225, .75);
+            text-align: center;
+    }
+    main{
+        
+        header{
+            
+            
+            .city{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 3rem;
+                .mainInfo{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    img{
+                        max-height: 7rem;
+                    }
+                    h2{
+                        margin:0;
+                    }
+                }
+            }
+        }
+            
+        .content{
+            padding: 2rem;
+            display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: #9ADEFF;
+                -webkit-box-shadow: -3px -5px 26px 9px rgba(66, 68, 90, 1);
+                    -moz-box-shadow: -3px -5px 26px 9px rgba(66, 68, 90, 1);
+                    box-shadow: -3px -5px 26px 9px rgba(66, 68, 90, 1);
+            
+            }
+            #range{
+                -webkit-appearance: none;
+                border: 0.2px solid 6ebae0;
+                    border-radius: 8.8px;
+                    width: 100%;
+                    height: 10.2px;
+                    cursor: pointer;
+
+                width: 40%;
+                transform:scale(2);
+                margin: 2rem 0;
+                
+                background-color: #6ebae0;
+
+                -webkit-slider-thumb {
+                        margin-top: -13.1px;
+                        width: 16px;
+                        height: 36px;
+                        background: #1d365c;
+                        border: 1.7px solid #000000;
+                        border-radius: 28px;
+                        cursor: pointer;
+                        -webkit-appearance: none;}
+
+
+            
+            .cube{
+                    padding: 2rem 0;
+                    margin-bottom: 2rem;
+                    
+                    text-align: center;
+                    width: 80%;
+                    
+                    
+                    
+                    h3,h4{
+                        margin:0;
+                    }
+                    .weatherMain{
+                        .minMax{   
+                            display: flex;
+                            justify-content: center;
+                        }
+                    }
+                }
+        
+        
+        }
+             
+         
+
+    }
+   footer {
+    // border: 2ps dashed blue;
+       padding: 1rem;
+       width: 100%;
+      
+       position: fixed;
+       bottom:0;
+       display: flex;
+       justify-content: start;
+    h4{
+
+        // border: 2px dashed green;
+        text-align: left;
+        width: auto;
+        font-family: 'Pacifico', cursive;
+    }
+    
+   .imageFooter{
+    // border: 2px dashed red;
+    width: auto;
+    padding: 1rem 0;
+    // display: flex;
+    
+    // height: 30px;
+    // width: 30px;
+    }
+    
+   }
+    
+}

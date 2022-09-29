@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEBAB</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <style>
+      .border{border: 3px solid red !important}
+    </style>
+  </head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">KEBAB</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+    
+  <div id="carouselExampleCaptions" class="carousel slide mb-5" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <picture>
+          <source media="(max-width:768px)" srcset="img/kebs1_mobile.webp">
+          <img src="img/kebab1.webp" class="d-block w-100" alt="KEBAB JEDEN">
+        </picture>
+        <div class="carousel-caption d-none d-md-block">
+          <h1>First slide label</h1>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <picture>
+          <source media="(max-width:768px)" srcset="img/kebs1_mobile.webp">
+          <img src="img/kebab1.webp" class="d-block w-100" alt="KEBAB JEDEN">
+        </picture>
+        <div class="carousel-caption d-none d-md-block">
+          <h1>Second slide label</h1>
+          <p>Some representative placeholder content for the second slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <picture>
+          <source media="(max-width:768px)" srcset="img/kebs1_mobile.webp">
+          <img src="img/kebab1.webp" class="d-block w-100" alt="KEBAB JEDEN">
+        </picture>
+        <div class="carousel-caption d-none d-md-block">
+          <h1>Third slide label</h1>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-lg-4 mb-2">
+        <img src="img/kebs2_small.webp" alt="Kebab 2" class="rounded-circle">
+        <H2>KEBAB W CIEŚCIE</H2>
+        <P>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit, alias? Suscipit vero amet voluptas pariatur nihil corrupti dolore culpa, exercitationem et. Iste sint illo delectus blanditiis praesentium impedit ratione maxime.</P>
+        <buton class="btn btn-secondary">DODAJ DO KOSZYKA</buton>
+      </div>
+      <div class="col-lg-4 mb-2">
+        <img src="img/kebs2_small.webp" alt="Kebab 2" class="rounded-circle">
+        <H2>KEBAB W CIEŚCIE</H2>
+        <P>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit, alias? Suscipit vero amet voluptas pariatur nihil corrupti dolore culpa, exercitationem et. Iste sint illo delectus blanditiis praesentium impedit ratione maxime.</P>
+        <buton class="btn btn-secondary">DODAJ DO KOSZYKA</buton>
+      </div>
+      <div class="col-lg-4 mb-2">
+        <img src="img/kebs2_small.webp" alt="Kebab 2" class="rounded-circle">
+        <H2>KEBAB W CIEŚCIE</H2>
+        <P>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit, alias? Suscipit vero amet voluptas pariatur nihil corrupti dolore culpa, exercitationem et. Iste sint illo delectus blanditiis praesentium impedit ratione maxime.</P>
+        <buton class="btn btn-secondary">DODAJ DO KOSZYKA</buton>
+      </div>
+    </div>
+
+    <hr class="my-5">
+    <div class="row">
+      <div class="col-md-7">
+        <h2 class="lh-1">KEBAB W BUŁCE</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quidem reprehenderit dolore hic corrupti esse voluptatem! Aspernatur, voluptatum ducimus at consequuntur asperiores dignissimos fugiat. Quaerat explicabo minus consequatur consequuntur cumque.</p>
+      </div>
+        <div class="col-md-5">
+        <img src="img/kebs3.webp" alt="kebs w bulce" class="w-100">
+      </div>
+    </div>
+
+    <hr class="my-5">
+    <div class="row">
+      <div class="col-md-5">
+        <img src="img/kebs3.webp" alt="kebs w bulce" class="w-100">
+      </div>
+      <div class="col-md-7">
+        <h2 class="lh-1">KEBAB W BUŁCE</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quidem reprehenderit dolore hic corrupti esse voluptatem! Aspernatur, voluptatum ducimus at consequuntur asperiores dignissimos fugiat. Quaerat explicabo minus consequatur consequuntur cumque.</p>
+      </div>
+    </div>
+
+    <hr class="my-5">
+    <div class="row">
+      <div class="col-md-7">
+        <h2 class="lh-1">KEBAB W BUŁCE</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quidem reprehenderit dolore hic corrupti esse voluptatem! Aspernatur, voluptatum ducimus at consequuntur asperiores dignissimos fugiat. Quaerat explicabo minus consequatur consequuntur cumque.</p>
+      </div>
+        <div class="col-md-5">
+        <img src="img/kebs3.webp" alt="kebs w bulce" class="w-100">
+      </div>
+    </div>
+
+    <hr class="my-5">
+
+  </div>
+
+<footer class="container">
+  <div class="row">
+    <div class="col">&copy; Copyright 2022</div>
+    <div class="col text-end my-3">
+      <a href="#">Back to top</a>
+    </div>
+  </div>
+</footer>
+
+
+  
+</body>
+</html>
