@@ -16,8 +16,12 @@
   3. Zmień nazwy na swoje imię
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 # MERGE MASTERA
+=======
+## MERGE MASTERA
+>>>>>>> master
 **PRZED WPROWADZENIEM TYCH ZMIAN KONIECZNIE ZRÓB COMMIT**
 >>>>>>> master
 

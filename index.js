@@ -1,5 +1,5 @@
-const fs = require("fs")
-const apps = fs.readdirSync( __dirname + "/apps" )
+const fs = require("fs");
+const apps = fs.readdirSync(__dirname + "/apps");
 
 let content = `
 <!DOCTYPE html>
@@ -13,34 +13,28 @@ let content = `
 <body>
   <main>
     <h1> Apps </h1>
-`
-apps.forEach( app => {
+`;
+apps.forEach((app) => {
   content += `
-    <h2> ${ app } </h2>
-  `
-
-
-})
+    <h2> ${app} </h2>
+  `;
+});
 
 // console.log(apps)
 // content += `HELLO WORLD`
 
+<<<<<<< HEAD
+=======
 
-
+>>>>>>> 9dd65f9e96de6b8adb9aa2a2dc2fb8049bead8f9
 content += `
   </main>
 </body>
-</html>`
+</html>`;
 
-fs.writeFileSync( __dirname + "/index.html", content)
+fs.writeFileSync(__dirname + "/index.html", content);
 
-
-
-
-
-
-
-
+///testowe zmiany
 
 // var env = new nunjucks.Environment(new nunjucks.FileSystemLoader('path/to/templates'));
 // env.render('layout-foo.html', { bar: baz });
