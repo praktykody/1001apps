@@ -1,0 +1,50 @@
+body {
+    background-color: royalblue;
+    margin: 0;
+  }
+  body main {
+    border: 5px dashed red;
+  }
+  body main header .city {
+    border: 2px dashed blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  body main header .city .mainInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body main header .city .mainInfo img {
+    max-height: 7rem;
+  }
+  body main header .city .mainInfo h2 {
+    margin: 0;
+  }
+  body main .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(240, 248, 255, 0.261);
+  }
+  body main .content #range {
+    width: 40%;
+    transform: scale(2);
+    margin: 2rem 0;
+    background-color: #9a905d;
+  }
+  body main .content .cube {
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    border: 5px dashed rgb(249, 188, 8);
+    text-align: center;
+    width: 80%;
+  }
+  body main .content .cube h3, body main .content .cube h4 {
+    margin: 0;
+  }
+  body main .content .cube .weatherMain .minMax {
+    display: flex;
+    justify-content: center;
+  }
