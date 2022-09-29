@@ -23,4 +23,4 @@
 2. Przejdź na swoją branch (gałąź), wejdź do source control -> trzy kropeczki nad message (komunikat) -> branch (gałąź) -> merge branch (scal gałąź)
 3. Wybierz gałąź master (wciągnij wszytkie zmiany z mastera na swoją gałąź jednocześnie nie zmieniając wprowadzonych zmian na gałęzi)  
 
-zmiana
+zmiana M
