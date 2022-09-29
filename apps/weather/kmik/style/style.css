@@ -1,0 +1,69 @@
+body {
+  background-color: rgb(76, 80, 93);
+  margin: 0;
+}
+body main header .city {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 1rem;
+  color: white;
+}
+body main header .city .mainInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main header .city .mainInfo img {
+  max-height: 6rem;
+  border-radius: 1rem;
+}
+body main header .city .mainInfo h2 {
+  margin: 0;
+  color: rgb(255, 255, 255);
+}
+body main .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(105, 108, 118);
+  box-shadow: 8px 8px 24px 0px rgb(66, 68, 90);
+  box-shadow: inset 0px 0px 71px 26px rgb(40, 42, 66);
+  padding-top: 2rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  transition-duration: 3s;
+}
+body main .content .content:hover {
+  background-color: yellow;
+}
+body main .content #range {
+  width: 40%;
+  transform: scale(2);
+}
+body main .content .cube {
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+body main .content .cube h3, body main .content .cube h4 {
+  margin: 0.1rem;
+  text-align: center;
+}
+body main .content .cube .weatherMain .minMax {
+  display: flex;
+  justify-content: center;
+}
+
+.searchLocation {
+  background-color: rgb(56, 58, 67);
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1rem;
+}
+
+@media (min-width: 768px) {
+  > header header,
+main header {
+    padding: 2rem 30%;
+  }
+}/*# sourceMappingURL=style.css.map */

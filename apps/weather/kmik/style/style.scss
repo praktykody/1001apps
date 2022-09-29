@@ -1,0 +1,90 @@
+body{
+    background-color: rgb(76, 80, 93);
+    margin: 0;
+    main{
+        // border: 5px dashed red;
+        header{
+            .city{
+                // border: 5px dashed blue;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 1rem 1rem;
+                color: white;
+                .mainInfo{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    img{
+                        max-height: 6rem;
+                        border-radius: 1rem;
+                    }
+                    h2{
+                        margin: 0;
+                        color: rgb(255, 255, 255);
+                    }
+
+                }
+                }
+
+            }
+        .content{
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            background-color: rgb(105, 108, 118);
+            box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+            box-shadow: inset 0px 0px 71px 26px rgb(40, 42, 66);
+            padding-top: 2rem;
+            margin-left: 3rem;
+            margin-right: 3rem;
+            transition-duration:3s;
+
+        
+        .content:hover{
+            background-color: yellow;
+        }
+
+
+            #range{
+                width: 40%;
+                transform: scale(2);
+            }
+            // border:5px dashed rgb(224, 235, 21);
+            .cube{
+            //   border:2px dashed rgb(249, 188, 8);
+              padding: 2rem 0;
+              margin-bottom: 2rem;
+              h3, h4{
+                margin:.1rem;
+                text-align: center;
+              }
+              .weatherMain{
+                .minMax{
+                    // border:2px dashed red;
+                    display: flex;
+                    justify-content: center;
+            }
+                }
+              }
+            }
+          }
+
+    }
+    .searchLocation{
+        background-color: rgb(56, 58, 67);
+        display: flex;
+        justify-content: center;
+        padding: 1rem 1rem;
+        
+    }
+
+    @media(min-width:768px){
+        >header,
+        main{
+            header{
+                padding: 2rem 30%;
+                
+            }
+        }
+    }

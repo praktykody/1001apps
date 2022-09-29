@@ -12,6 +12,12 @@
 2. Kliknij na "Create new branch",
 3. Wpisz swoje imię i potwierdź enterem.
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+# MERGE MASTERA
+=======
 ## TWORZENIE PROJEKTÓW.
 
 1. Otwórz 1001apps i folder z kursu.
@@ -21,10 +27,12 @@
 <<<<<<< HEAD
 # MERGE MASTERA
 
+>>>>>>> master
 =======
 ## MERGE MASTERA
 >>>>>>> master
 **PRZED WPROWADZENIEM TYCH ZMIAN KONIECZNIE ZRÓB COMMIT**
+>>>>>>> master
 
 **JEŚLI W PROJEKCIE ZOSTAŁY ZROBIONE ZMIANY I CHCESZ JE WPIĄĆ W SWOJĄ BRANCH**
 
