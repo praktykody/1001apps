@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <meta name="description" content="Check the weather forecast worldwide! What is the weather like? You can find out here! Sunrise's and sunset's time in your city!">
+    <meta property="og:image" content="https://vriabko.github.io/kursfront/weather/img/mainimage.webp"/>
+    <meta name="google-site-verification" content="Jj6M8cxhXV0o5eoQ-OxLzNCbjYlXoRZJjPiZHuumQ4M" />
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script.js" defer></script>
+    <link rel="shortcut icon" href="#">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <header>
+        <div class="weather">
+            <h1>Weather Forecast</h1>
+        </div>
+        <div class="searchLocation">
+            <div class="buttons">
+                <input class="Inputstyle" type="text" id="location" value="Warszawa" onclick="this.value=''">
+                <button onclick="getLatLonDependOfName()">SZUKAJ</button>
+            </div>
+            <div class="image">
+                <img src="img/Removal-47012.webp" alt="clouds otherway">
+                <img src="img/removebg-preview.webp" alt="sun">
+                <img src="img/Removal-470.webp" alt="clouds">
+            </div>
+           
+        </div>
+
+
+    </header>
+    <main>
+        <header>
+            <div class="city">
+                <div>
+
+                    <p>☀️</p>
+                    <div class="sunrise">SUNRISE</div>
+                </div>
+                <div class="mainInfo">
+
+                    <img src="https://countryflagsapi.com/svg/PL" alt="PL FLAG">
+                    <h2>Warszawa</h2>
+                </div>
+                <div>
+                    <p>🌙</p>
+                    <div class="sunset">SUNSET</div>
+                </div>
+
+            </div>
+        </header>
+        <div class="content">
+            <input type="range" 
+            id="range" 
+            min="0" 
+            max="40" 
+            onchange="changeCubeInfo(this.value)" 
+            onmousemove="changeCubeInfo(this.value)"
+            ontouchmove="changeCubeInfo(this.value)">
+
+            <div class="cube">
+                <h3>
+                    <div class="innerH3">
+                        <h4>description</h4>
+                        <span>dt_txt</span>
+
+                    </div>
+                    <img src="https://openweathermap.org/img/wn/10n.png" alt="IMG OF WEATHER">
+
+                </h3>
+                <div class="weatherMain">
+                    <h3>feels_like</h3>
+                    <div class="minMax">
+                        <div class="min">temp_min</div>
+                        <span>&nbsp;-&nbsp;</span>
+                        <div class="max">temp_max</div>
+                    </div>
+
+
+                </div>
+
+            </div>
+           
+
+
+        </div>
+        <footer>
+            <p>  
+                <h4>There's No Bad Weather, Only Bad Clothes! </h4>
+            </p>
+            <div class="imageFooter">
+                <img src="img/storm.webp" alt="heart of Clouds">
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
