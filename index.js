@@ -30,9 +30,3 @@ content += `
 </html>`;
 
 fs.writeFileSync(__dirname + "/index.html", content);
-
-///testowe zmiany
-
-// var env = new nunjucks.Environment(new nunjucks.FileSystemLoader('path/to/templates'));
-// env.render('layout-foo.html', { bar: baz });
-///var
