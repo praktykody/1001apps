@@ -25,7 +25,8 @@ apps.forEach( app => {
 // console.log(apps)
 // content += `HELLO WORLD`
 
-
+// TO SĄ TESTOWE ZMIANY
+// 
 
 content += `
   </main>
