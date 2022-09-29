@@ -16,8 +16,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
+
 # MERGE MASTERA
+
 =======
+
 ## TWORZENIE PROJEKTÓW.
 
 1. Otwórz 1001apps i folder z kursu.
@@ -25,14 +28,16 @@
 3. Zmień nazwy na swoje imię
 
 <<<<<<< HEAD
+
 # MERGE MASTERA
 
->>>>>>> master
-=======
+> > > > > > > # master
+
 ## MERGE MASTERA
->>>>>>> master
-**PRZED WPROWADZENIEM TYCH ZMIAN KONIECZNIE ZRÓB COMMIT**
->>>>>>> master
+
+> > > > > > > master
+> > > > > > > **PRZED WPROWADZENIEM TYCH ZMIAN KONIECZNIE ZRÓB COMMIT**
+> > > > > > > master
 
 **JEŚLI W PROJEKCIE ZOSTAŁY ZROBIONE ZMIANY I CHCESZ JE WPIĄĆ W SWOJĄ BRANCH**
 
