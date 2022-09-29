@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather APP</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="searchLocation">
+        <input
+          type="text"
+          id="location"
+          value="London"
+          placeholder="Wpisz miasto"
+        />
+        <button onclick="getLatLonDependOfName()">Szukaj</button>
+      </div>
+    </header>
+    <main>
+      <header>
+        <div class="city">
+          <div class="sunrise">sunrise</div>
+          <div class="mainInfo">
+            <img src="https://countryflagsapi.com/svg/pl" alt="PL FLAG" />
+            <h2>Warszawa</h2>
+          </div>
+          <div class="sunset">sunset</div>
+        </div>
+      </header>
+      <div class="content">
+        <input
+          type="range"
+          id="range"
+          min="0"
+          max="39"
+          onchange="changeCubeInfo(this.value)"
+          onmousemove="changeCubeInfo(this.value)"
+          ontouchmove="changeCubeInfo(this.value)"
+        />
+        <div class="cube">
+          <h3>
+            <div class="innerH3">
+              <span>dt_txt</span>
+              <h4>description</h4>
+            </div>
+            <img alt="img of weather" />
+            <!-- src="https://openweathermap.org/img/wn/10n.png" -->
+          </h3>
+
+          <div class="weatherMain">
+            <h3>fells_like</h3>
+            <div class="minMax">
+              <div class="min">temp_min</div>
+              <span>&nbsp;-&nbsp;</span>
+              <div class="max">temp_max</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>Made with ♥️ by Karo</p>
+    </footer>
+  </body>
+</html>
+
+<!-- f7475169b48c1a3e45bdcaa1b374c413 -->
+
+<!-- https://api.openweathermap.org/data/2.5/forecast?lat=50.2649&lon=19.0238&appid=f7475169b48c1a3e45bdcaa1b374c413&units=metric&lang=pl -->
