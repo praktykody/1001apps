@@ -12,17 +12,20 @@ let content = `
 </head>
 <body>
   <main>
-    <h1> Apps </h1>
+    <h1> Apps xd</h1>
 `;
-apps.forEach((app) => {
-  content += `
-    <h2> ${app} </h2>
-  `;
+apps.forEach( app => {
+  content += `<h2> ${app} </h2>
+  <ul>`;
+
+  const names = fs.readdirSync(__dirname + "/apps/" + app)
+  names.forEach( n => {
+    content += ` <li>
+      <a href="./apps/${app}/${n}" > ${ n } </a>
+    </li> `
+  })
+  content += `</ul>`
 });
-
-// console.log(apps)
-// content += `HELLO WORLD`
-
 
 content += `
   </main>
