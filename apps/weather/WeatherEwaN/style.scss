@@ -1,0 +1,57 @@
+body{
+    background-color: royalblue;
+    margin:0;
+    main{
+      border:5px dashed red;
+      header{
+        .city{
+          border:2px dashed blue;
+          display:flex;
+          justify-content: space-between;
+          align-items: center;
+          .mainInfo{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            img{
+              max-height:7rem;
+            }
+            h2{
+              margin:0;
+            }
+          }
+        }
+      }
+      .content{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(240, 248, 255, 0.261);
+        #range{
+          width:40%;
+          transform: scale(2);
+          margin:2rem 0;
+          
+          background-color: #9a905d;
+        }
+        .cube{
+          padding: 2rem 0;
+          margin-bottom: 2rem;
+  
+          border:5px dashed rgb(249, 188, 8);
+          text-align: center;
+          width:80%;
+          h3,h4{
+            margin:0; 
+          }
+          .weatherMain{
+            .minMax{
+              display:flex;
+              justify-content: center;
+            }
+          }
+  
+  // SELEKTOR {
+  //  WŁAŚCIWOŚĆ 1: WARTOŚĆ
+  //  WŁAŚCIWOŚĆ 2: WARTOŚĆ
+  // }
