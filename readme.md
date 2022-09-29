@@ -18,8 +18,12 @@
 2. Do konkretnych folderów app wrzuć odpowiadające im foldery z kursu
 3. Zmień nazwy na swoje imię
 
+<<<<<<< HEAD
 # MERGE MASTERA
 
+=======
+## MERGE MASTERA
+>>>>>>> master
 **PRZED WPROWADZENIEM TYCH ZMIAN KONIECZNIE ZRÓB COMMIT**
 
 **JEŚLI W PROJEKCIE ZOSTAŁY ZROBIONE ZMIANY I CHCESZ JE WPIĄĆ W SWOJĄ BRANCH**

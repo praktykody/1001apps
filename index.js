@@ -26,7 +26,6 @@ apps.forEach( app => {
 // content += `HELLO WORLD`
 
 
-
 content += `
   </main>
 </body>
