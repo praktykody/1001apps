@@ -1,0 +1,96 @@
+/* selektor gwiazdki odnosi się do WSZYSTKICH elementów na stronie */
+*{
+  /* pozwala na skalowanie elementów włączając padding i border
+  (domyślnym zachowaniem przy skalowaniu elementów jest branie pod uwagę
+  tylko wielkości elementu - bez bordera i paddingu) */
+  box-sizing: border-box;
+}
+body{
+  background-color: aquamarine;
+  margin:0;
+}
+
+main{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+article{ 
+  /* position relative, zachowuje się jak static - czyli domyślnie
+  ale nie jest static, więc pozycje absoilutne wewnątrz, dostosowują 
+  się do niej */
+  position:relative;
+  /* szerokość na 90 ze 100 kratek szerokości strony */
+  width:90vw;
+  /* wysokość na 90 ze 100 kratek szerokości strony */
+  height:90vw;
+  /* dzięki ustaleniu wspólnej wielkości na width i height
+  otrzymujemy kwadrat */
+}
+
+article p, 
+article img{
+  /* pozwala nałożyć jeden element na drugi (nie zwraca uwagi na rodzeństwo),
+  a dostosowuje się do najbliższego przodka który nie jest w pozycji statycznej */
+  position:absolute;
+  /* przyjmuje twarde wartości rodzica (90vw) */
+  width:100%;
+  height:100%;
+  margin:0;
+  /* wyśrodkowanie wnętrza elementów */
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+article p {
+  background-color:antiquewhite;
+  /* opóźnia zmianę elementu o jakiś czas (.5s = pół sekundy) */
+  transition:.5s;
+  /* jeśli używamy wartości mniejszej niż 1, nie musimy używać 0 
+  (0.5 = .5) */
+}
+/*  :active - odnosi się do elementu po kliknięciu
+    :hover - odnosi się do elementu po nakierowaniu myszką (nie działa na urządzeniach mobilnych) */
+article p:active{
+  opacity:0;
+}
+
+header{
+  /* pozycja sticky działa tylko w połączeniu z warunkiem (top 0 przykleja się
+  do górnej krawędzi) */
+  position: sticky;
+  top:0;
+  background-color: rgb(6, 110, 110);
+  /* im większa liczba przy z index, tym element bliżej użytkownika (w osi z) */
+  z-index:1;
+  padding:.1rem 1rem;
+}
+h1{margin:.2rem;}
+
+footer{
+  position:fixed;
+  width:100%;
+  bottom:0;
+  left:0;
+  background-color: rgb(6, 110, 110);
+  padding-left:2rem;
+}
+
+/* dodaj warunkowo, jeśli wielkość ekranu użytkownika ma przynajmniej 768px */
+@media ( min-width:768px ) {
+  article{
+    width:35vw;
+    height:35vw;
+    margin-bottom:5vw;
+  }
+  main{
+    flex-direction: row;
+    /* pozwól na "spadnięcie" elementów do kolejego wiersza, jeśli nie mieszczą 
+    się w 1 wierszu */
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+  }
+
+}

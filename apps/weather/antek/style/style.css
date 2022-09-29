@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --light-bg-color: royalblue;
+  --dark-bg-color: rgb(36, 39, 46);
+  --light-font-color: #000;
+  --dark-font-color: #fff;
+}
+
+body {
+  color: var(--light-font-color);
+  background-color: var(--light-bg-color);
+  margin: 0;
+}
+body > header {
+  padding: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body > header .outerSwitch {
+  border: 2px solid rgba(173, 65, 65, 0.577);
+  border-radius: 2rem;
+  background-color: rgba(154, 144, 93, 0.2941176471);
+  cursor: pointer;
+}
+body > header .outerSwitch .switch {
+  width: 3.5rem;
+  display: flex;
+  transition: 0.5s;
+}
+body > header .outerSwitch .switch.dark {
+  justify-content: flex-end;
+}
+body > header .outerSwitch .switch .innerSwitch {
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid rgb(183, 124, 124);
+  background-color: rgb(237, 183, 183);
+  border-radius: 50%;
+}
+body > header input, body > header button {
+  padding: 0.5rem;
+}
+body > header button {
+  cursor: pointer;
+}
+body main header {
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.342);
+}
+body main header .city {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body main header .city .mainInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main header .city .mainInfo img {
+  max-height: 7rem;
+}
+body main header .city .mainInfo h2 {
+  margin: 0;
+}
+body main .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(240, 248, 255, 0.261);
+}
+body main .content #range {
+  width: 40%;
+  transform: scale(2);
+  margin: 2rem 0 0 0;
+  background-color: #9a905d;
+}
+body main .content .cube {
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+  background-color: rgba(0, 0, 0, 0.613);
+  text-align: center;
+  width: 80%;
+}
+body main .content .cube h3, body main .content .cube h4 {
+  margin: 0;
+}
+body main .content .cube .weatherMain .minMax {
+  display: flex;
+  justify-content: center;
+}
+body footer {
+  padding: 1rem;
+}
+body footer p {
+  text-align: right;
+}
+body.dark {
+  color: var(--dark-font-color);
+  background-color: var(--dark-bg-color);
+}
+@media (min-width: 768px) {
+  body main header {
+    padding: 2rem 30%;
+  }
+}
