@@ -1,0 +1,18 @@
+body{
+  background-color: rosybrown;
+  main{
+    .projects{
+      background-color: rgba(250, 235, 215, 0.777);
+      display:flex;
+      flex-wrap: wrap;
+
+    }
+    .ranking{
+      background-color: rgba(250, 235, 215, 0.777);
+      padding:1rem;
+      margin-top:1rem;
+    }
+
+  }
+
+}
