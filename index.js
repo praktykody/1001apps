@@ -23,10 +23,7 @@ apps.forEach((app) => {
 // console.log(apps)
 // content += `HELLO WORLD`
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 9dd65f9e96de6b8adb9aa2a2dc2fb8049bead8f9
 content += `
   </main>
 </body>
