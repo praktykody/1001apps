@@ -38,4 +38,10 @@
 
 1. Przejdź na branch master i kliknij na synchronizację (aktuializujemy do najnowszej wersji mastera)
 2. Przejdź na swoją branch (gałąź), wejdź do source control -> trzy kropeczki nad message (komunikat) -> branch (gałąź) -> merge branch (scal gałąź)
+<<<<<<< HEAD
+3. Wybierz gałąź master (wciągnij wszytkie zmiany z mastera na swoją gałąź jednocześnie nie zmieniając wprowadzonych zmian na gałęzi)  
+
+zmiana M
+=======
 3. Wybierz gałąź master (wciągnij wszytkie zmiany z mastera na swoją gałąź jednocześnie nie zmieniając wprowadzonych zmian na gałęzi).
+>>>>>>> master
