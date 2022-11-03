@@ -1,12 +1,18 @@
 # 1001projects
 
 ## Klonowanie APP
+1. Proste: 
+- Otwórz VSC, kliknij "F1", a następnie wpisz "GIT CLONE"
+- kliknij na opcję "Clone from github", i wpisz taicoders/1001apps
+
+2. Szybsza opcja
+- w terminalu wpisz
 ```git 
-  git clone https://github.com/apietryga/1001apps
+  git clone https://github.com/taicoders/1001apps
 ``` 
 
 ## TWORZENIE GAŁĘZI 
-  1. Kliknij w lewym dolnym rogu na "master"
+  1. W VSC kliknij w lewym dolnym rogu na "master"
   2. Kliknij na "Create new branch",
   3. Wpisz swoje imię i potwierdź enterem.
 

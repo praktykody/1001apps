@@ -1,0 +1,27 @@
+.carousel-item img{
+  height:32rem;
+}
+
+.carousel-item h5{
+  color:#fff;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.carousel-item p{
+  color:#fff;
+  font-size: 1.25rem;
+}
+
+.carousel-item:nth-child(1) h5, .carousel-item:nth-child(1) p{
+  text-align: left;
+}
+
+.carousel-item:nth-child(3) h5, .carousel-item:nth-child(3) p{
+  text-align: right;
+}
+
+.headings img{
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+}
