@@ -1,22 +1,22 @@
 .carousel-item img{
     height:32rem;
 }
-.carousel.item h5{
+.carousel-item h5{
     color: white;
     font-size: 3rem;
     font-weight: bold;
 }
-.carousel.item p{
+.carousel-item p{
     color:beige;
     font-size: 1.5rem;
 
 }
-.carousel.item:nth-child(1)h5, .carousel.item:nth-child(1) p{
+.carousel-item:nth-child(1)h5, .carousel.item:nth-child(1) p{
     
     text-align: right;
 
 }
-.carousel.item:nth-child(3)h5, .carousel.item:nth-child(3) p{
+.carousel-item:nth-child(3)h5, .carousel.item:nth-child(3) p{
    
     text-align: right; 
 
