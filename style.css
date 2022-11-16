@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+}
+
+body { 
+  background-color: rgba(150, 205, 68, 0.857);
+  margin:0;
+}
+
+nav {
+  border: 2px dashed red;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position:sticky;
+  top:0;
+
+}
+
+/* wszystkie taki a mające nava jako przodka */
+nav a {
+  color: #000;
+  border: 2px dashed blue;
+}
+
+nav a h1 {
+  border:2px dashed rgb(102, 7, 23);
+  padding:0;
+  margin:0;
+}
+
+nav ul {
+  border:2px dashed green;
+  list-style: none;
+  margin:0;
+  padding:0;
+  
+  /* WŁAŚCIWOŚCI HAMBURGERA */
+  position: absolute;
+  width:40vw;
+  right:calc( -40vw - 2px );
+  top:100%;
+  transition: .5s;
+}
+
+nav ul li {
+  border:2px dashed #000;
+  /* top right bottom left */
+  /* margin:5px 10px 5px 10px; */
+  /*      y   x   */
+  margin:5px 10px;
+}
+
+/* HAMBURGER ELEMENTS */
+nav label{
+  border:2px solid blue;
+  width: 2em;
+  height: 2em;
+  margin-right:5px;
+  position: relative;
+  cursor:pointer;
+}
+
+nav label div{
+  height:3px;
+  border-radius: 3px;
+  background-color: #000;
+  position: absolute;
+  width:80%;
+  left:10%;
+  transition: .5s;
+}
+
+nav label div:nth-child(1){
+  top:calc( 25% - 1.5px );
+}
+
+nav label div:nth-child(2){
+  top:calc( 50% - 1.5px );
+}
+
+nav label div:nth-child(3){
+  top:calc( 75% - 1.5px );
+}
+
+#toggler{
+  display:none;
+}
+
+#toggler:checked ~ ul {
+  border:2px dashed green;
+  right:0;
+}
+
+#toggler:checked ~ label div:nth-child(1){
+  transform: rotate(45deg);
+  top:calc( 50% - 1.5px );
+}
+
+#toggler:checked ~ label div:nth-child(2){
+  opacity:0;
+}
+
+#toggler:checked ~ label div:nth-child(3){
+  transform: rotate(135deg);
+  top:calc( 50% - 1.5px );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+  border:2px dashed teal;
+  margin-top:200vh;
+}
