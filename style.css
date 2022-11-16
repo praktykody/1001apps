@@ -37,10 +37,10 @@ nav ul {
   padding:0;
   
   /* WŁAŚCIWOŚCI HAMBURGERA */
-  position: absolute;
+  position: fixed;
   width:40vw;
   right:calc( -40vw - 2px );
-  top:100%;
+  top:3rem;
   transition: .5s;
 }
 
