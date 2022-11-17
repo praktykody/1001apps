@@ -20,6 +20,7 @@ nav {
   position:sticky; /* przykleja się do ekranu jeśli jest spełniony warunek */
   top:0; /* warunek przyklejania się poz. sticky */
 
+  padding: 0 10px;
 }
 
 /* wszystkie tagi "a" mające "nav"a jako przodka */
@@ -46,8 +47,8 @@ nav ul {
   width:40vw; /* szerkość to 40% szerokości okna przeglądarki */
   right:calc( -40vw - 2px ); /* odsuwamy w prawo od prawej krawędzi strony o obliczoną ilość (szerokość elementu - border) (ukrywamy go) */
   /* top:4rem; odsuwamy menu od góry */
-  top: calc( 2em + 10px ); /* odsuń menu od góry o wielkość labela z marginesem */
-  height:calc( 100vh - ( 2em + 10px ) ); /* ustaw wysokość, aby zajmowała cały ekran poza odsunięciem z góry */
+  top: calc( 2em + 20px ); /* odsuń menu od góry o wielkość labela z marginesem */
+  height:calc( 100vh - ( 2em + 20px ) ); /* ustaw wysokość, aby zajmowała cały ekran poza odsunięciem z góry */
   transition: .5s;
 }
 
@@ -65,7 +66,7 @@ nav label{
   border:2px solid blue;
   width: 2em; /* rozmiar większy od czcionki H1 */
   height: 2em; /* taki sam rozmiar robi kwadrat */
-  margin:5px;
+  margin:10px 0;
   position: relative; /* utrzymuje potomków z pozycjami absolutnymi */
   cursor:pointer; /* po nakierowaniu myszą pokazuje rączkę */
 }
@@ -120,18 +121,28 @@ nav label div:nth-child(3){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 footer{
   border:2px dashed teal;
   margin-top:200vh;
+}
+
+
+/* wyświetlanie na komputerze */
+@media ( min-width: 768px ){
+
+  nav label { 
+    display:none;
+  }
+
+  nav ul {
+    position: static;
+    width: unset;
+    height: unset;
+    display: flex;
+  }
+
+  nav ul li{
+    margin:0;
+  }
+
 }
