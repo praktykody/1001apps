@@ -1,24 +1,28 @@
+/* * - selektor biorący pod uwagę wszystko! */
 * {
+  /* jeśli coś się rozjeżdza na stronie - użyj box sizing */
   box-sizing: border-box;
 }
 
 body { 
   background-color: rgba(150, 205, 68, 0.857);
+  /* usuń domyślny margines body */
   margin:0;
 }
 
 nav {
   border: 2px dashed red;
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
 
-  position:sticky;
-  top:0;
+  display:flex; /* ustawia dzieci jeden obok drugiego */
+  justify-content: space-between; /* dodaje przestrzeń pomiędzy dziećmi na osi X */
+  align-items: center; /* ustawia dzieci na środku osi Y */
+
+  position:sticky; /* przykleja się do ekranu jeśli jest spełniony warunek */
+  top:0; /* warunek przyklejania się poz. sticky */
 
 }
 
-/* wszystkie taki a mające nava jako przodka */
+/* wszystkie tagi "a" mające "nav"a jako przodka */
 nav a {
   color: #000;
   border: 2px dashed blue;
@@ -26,21 +30,24 @@ nav a {
 
 nav a h1 {
   border:2px dashed rgb(102, 7, 23);
-  padding:0;
-  margin:0;
+  padding:0; /* przesrzeń pomiędzy treścią elementu a jego granicą (border) */
+  margin:0; /* przestrzeń wokół granic elementu */
+
 }
 
 nav ul {
   border:2px dashed green;
-  list-style: none;
+  list-style: none; /* usuwa markery ( kółeczka przed elementem) */
   margin:0;
   padding:0;
   
   /* WŁAŚCIWOŚCI HAMBURGERA */
-  position: fixed;
-  width:40vw;
-  right:calc( -40vw - 2px );
-  top:3rem;
+  position: fixed; /* przykleja się na stałe do ekranu */
+  width:40vw; /* szerkość to 40% szerokości okna przeglądarki */
+  right:calc( -40vw - 2px ); /* odsuwamy w prawo od prawej krawędzi strony o obliczoną ilość (szerokość elementu - border) (ukrywamy go) */
+  /* top:4rem; odsuwamy menu od góry */
+  top: calc( 2em + 10px ); /* odsuń menu od góry o wielkość labela z marginesem */
+  height:calc( 100vh - ( 2em + 10px ) ); /* ustaw wysokość, aby zajmowała cały ekran poza odsunięciem z góry */
   transition: .5s;
 }
 
@@ -49,57 +56,61 @@ nav ul li {
   /* top right bottom left */
   /* margin:5px 10px 5px 10px; */
   /*      y   x   */
-  margin:5px 10px;
+  padding:5px 10px;
+  margin:10px;
 }
 
 /* HAMBURGER ELEMENTS */
 nav label{
   border:2px solid blue;
-  width: 2em;
-  height: 2em;
-  margin-right:5px;
-  position: relative;
-  cursor:pointer;
+  width: 2em; /* rozmiar większy od czcionki H1 */
+  height: 2em; /* taki sam rozmiar robi kwadrat */
+  margin:5px;
+  position: relative; /* utrzymuje potomków z pozycjami absolutnymi */
+  cursor:pointer; /* po nakierowaniu myszą pokazuje rączkę */
 }
 
-nav label div{
+nav label div{ /* style dla wszytkich kresek w hamburgerze ( wspólne ) */
   height:3px;
-  border-radius: 3px;
+  border-radius: 3px; /* zaokrąglenie krawędzi */
   background-color: #000;
-  position: absolute;
-  width:80%;
-  left:10%;
-  transition: .5s;
+  position: absolute; /* uniezależniamy się od rodzeństwa i dostosowujemy się do najbliższego przodka nie będącego w pozyji statyznej */
+  width:80%; /* szerokość na 80% RODZICA */
+  left:10%; /* odsuwamy od lewej strony o 10% szerokości RODZICA */
+  transition: .3s; /* jeśli element będzie się zmieniał (odwracał), niech trwa mu to pół sekundy (.5 = 0.5) */
 }
-
+/* Każda z kresek hamburgera osobno: */
+/* nth-child - określa dziecko po indexie ( kolejności pojawienia się w dokumencie ) */
 nav label div:nth-child(1){
-  top:calc( 25% - 1.5px );
+  top:calc( 25% - 1.5px );  
 }
 
 nav label div:nth-child(2){
-  top:calc( 50% - 1.5px );
+  top:calc( 50% - 1.5px ); /* ustawiamy środek elementu na środku rodzica ( w osi Y ) (1.5px to połowa wysokości kreski )*/
 }
 
 nav label div:nth-child(3){
   top:calc( 75% - 1.5px );
 }
 
+/* jeśli odnosimy się do elemetu HTML z ID, to używamy "#"  */
 #toggler{
-  display:none;
+  display:none; /* element jest na stronie, ale jest niewidoczny i nie wpływa na inne elementy */
 }
 
-#toggler:checked ~ ul {
+/* #toggler:checked ~ - może wpłynąć na rodzeństwo togglera  renderujące się po nim, w momencie kiedy jest zaznazony  */
+#toggler:checked ~ ul { /* zmienamy styl "ul" tylko wtedy, kiedy toggler jest włączony  */
   border:2px dashed green;
-  right:0;
+  right:0; /* przyklej go do prawej krawędzi strony */
 }
-
+/* poierwsze dziecko labela przy włączonym togglerze */
 #toggler:checked ~ label div:nth-child(1){
-  transform: rotate(45deg);
+  transform: rotate(45deg); /* obrót elementu o 45 stopni */
   top:calc( 50% - 1.5px );
 }
 
 #toggler:checked ~ label div:nth-child(2){
-  opacity:0;
+  opacity:0; /* zmieniamy widoczność elementu na 0 (niewidoczny), wartość 1 daje widoczność maksymalną */
 }
 
 #toggler:checked ~ label div:nth-child(3){

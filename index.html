@@ -5,26 +5,29 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wizytówka</title>
+  <!-- link pozwala na dodanie stylu z zewnętrznego pliku -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <!-- określa elementy nawigacyjne strony -->
   <nav>
-    <!-- anchor - przekierowuje do hrefa po kliknięciu na h1 -->
+    <!-- anchor - przekierowuje do hrefa po kliknięciu -->
     <a href="/">
       <!-- naważniejszy nagłówkiem na stronie -->
       <h1>apietryga</h1>  
     </a>
-
+    <!-- element klikalny, który przetrzymuje stan rozsuwanego menu (kliknięty - otwarte, odkliknięty - zamknięte ) -->
     <input type="checkbox" id="toggler">
+
+    <!-- zwykły htmlowy element przejmujący działanie od togglera -->
     <label for="toggler">
+      <!-- trzy kreski hamburgera -->
       <div></div>
       <div></div>
       <div></div>
     </label>
 
-    <!-- lista nienumerowana (unordered) -->
+    <!-- lista nienumerowana (unordered list) -->
     <ul>
       <!-- element listy (list item) -->
       <li>O mnie</li>
