@@ -15,6 +15,7 @@
 }
 
 body { 
+  font-family: 'Ubuntu', sans-serif;
   background-color: var(--background-color);
   /* usuń domyślny margines body */
   margin:0;
@@ -45,7 +46,7 @@ nav a h1 {
 }
 
 nav ul {
-  background-color: var(--foreground-color);
+  background-color: var(--shadow-color);
   list-style: none; /* usuwa markery ( kółeczka przed elementem) */
   margin:0;
   padding:0;
@@ -139,6 +140,10 @@ footer{
 /* wyświetlanie na komputerze */
 @media ( min-width: 768px ){
 
+  nav{
+    padding:1.5rem 3rem;
+  }
+
   nav label { 
     display:none;
   }
@@ -148,6 +153,7 @@ footer{
     width: unset;
     height: unset;
     display: flex;
+    background-color: transparent;
   }
 
   nav ul li{
