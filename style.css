@@ -1,3 +1,13 @@
+:root{
+  --background-color: #101F61;
+  --foreground-color: #1D38AD;
+  --shadow-color: #505363;
+  --font-color: #000;
+  --font-light-color:#fff;
+
+  --shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
 /* * - selektor biorący pod uwagę wszystko! */
 * {
   /* jeśli coś się rozjeżdza na stronie - użyj box sizing */
@@ -5,14 +15,14 @@
 }
 
 body { 
-  background-color: rgba(150, 205, 68, 0.857);
+  background-color: var(--background-color);
   /* usuń domyślny margines body */
   margin:0;
 }
 
 nav {
-  border: 2px dashed red;
-
+  background-color: var(--foreground-color);
+  box-shadow: var(--shadow);
   display:flex; /* ustawia dzieci jeden obok drugiego */
   justify-content: space-between; /* dodaje przestrzeń pomiędzy dziećmi na osi X */
   align-items: center; /* ustawia dzieci na środku osi Y */
@@ -25,19 +35,17 @@ nav {
 
 /* wszystkie tagi "a" mające "nav"a jako przodka */
 nav a {
-  color: #000;
-  border: 2px dashed blue;
+  color: var(--font-light-color);
+  text-decoration: none;
 }
 
 nav a h1 {
-  border:2px dashed rgb(102, 7, 23);
   padding:0; /* przesrzeń pomiędzy treścią elementu a jego granicą (border) */
   margin:0; /* przestrzeń wokół granic elementu */
-
 }
 
 nav ul {
-  border:2px dashed green;
+  background-color: var(--foreground-color);
   list-style: none; /* usuwa markery ( kółeczka przed elementem) */
   margin:0;
   padding:0;
@@ -53,7 +61,8 @@ nav ul {
 }
 
 nav ul li {
-  border:2px dashed #000;
+  color:var(--font-light-color);
+  text-align: right;
   /* top right bottom left */
   /* margin:5px 10px 5px 10px; */
   /*      y   x   */
@@ -63,7 +72,8 @@ nav ul li {
 
 /* HAMBURGER ELEMENTS */
 nav label{
-  border:2px solid blue;
+  border:2px solid var(--font-light-color);
+  border-radius: 5px;
   width: 2em; /* rozmiar większy od czcionki H1 */
   height: 2em; /* taki sam rozmiar robi kwadrat */
   margin:10px 0;
@@ -74,7 +84,7 @@ nav label{
 nav label div{ /* style dla wszytkich kresek w hamburgerze ( wspólne ) */
   height:3px;
   border-radius: 3px; /* zaokrąglenie krawędzi */
-  background-color: #000;
+  background-color: var(--font-light-color);
   position: absolute; /* uniezależniamy się od rodzeństwa i dostosowujemy się do najbliższego przodka nie będącego w pozyji statyznej */
   width:80%; /* szerokość na 80% RODZICA */
   left:10%; /* odsuwamy od lewej strony o 10% szerokości RODZICA */
@@ -101,7 +111,6 @@ nav label div:nth-child(3){
 
 /* #toggler:checked ~ - może wpłynąć na rodzeństwo togglera  renderujące się po nim, w momencie kiedy jest zaznazony  */
 #toggler:checked ~ ul { /* zmienamy styl "ul" tylko wtedy, kiedy toggler jest włączony  */
-  border:2px dashed green;
   right:0; /* przyklej go do prawej krawędzi strony */
 }
 /* poierwsze dziecko labela przy włączonym togglerze */
