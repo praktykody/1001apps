@@ -129,6 +129,65 @@ nav label div:nth-child(3){
   top:calc( 50% - 1.5px );
 }
 
+/* bierze pod uwagę wszystkie wymienione selektory */
+h2, h3, h4, p {
+  margin:0;
+}
+
+.carousel-section {
+  border:2px dashed red;
+}
+
+/* ">" - bierze pod uwagę tylko header który jest bezpośrednim dzieckiem .carousel-section  */
+.carousel-section > header {
+  border:2px dashed green;
+  padding:.75rem 1rem;
+}
+
+.carousel-outer {
+  border:5px dashed orange;
+}
+
+.carousel-inner {
+  border:5px dashed #fff;
+}
+
+.carousel-inner article {
+  display:none;
+  border: 5px dashed yellow;
+}
+
+.carousel-inner article.active {
+  display:block;
+}
+
+.carousel-inner article header{
+  border: 5px dashed green;
+  padding:.5rem .75rem;
+}
+
+.carousel-inner article .content{
+  border: 5px dashed red;
+}
+
+.carousel-inner article .content img{
+  border: 5px dashed blue;
+  max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 footer{
