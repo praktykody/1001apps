@@ -32,6 +32,8 @@ nav {
   top:0; /* warunek przyklejania się poz. sticky */
 
   padding: 0 10px;
+
+  z-index:1;
 }
 
 /* wszystkie tagi "a" mające "nav"a jako przodka */
@@ -135,26 +137,46 @@ h2, h3, h4, p {
 }
 
 .carousel-section {
-  border:2px dashed red;
+  color: var(--font-light-color);
+  background-color: var(--shadow-color);
+  margin:1rem;
+  border-radius: 7px;
+  padding-bottom: 1px;
 }
 
 /* ">" - bierze pod uwagę tylko header który jest bezpośrednim dzieckiem .carousel-section  */
 .carousel-section > header {
-  border:2px dashed green;
   padding:.75rem 1rem;
 }
 
 .carousel-outer {
-  border:5px dashed orange;
+  background-color: var(--font-color);
+  position: relative;
+  border-radius: 7px;
+  margin:1rem;
 }
 
-.carousel-inner {
-  border:5px dashed #fff;
+.carousel-outer button{
+  background-color: transparent;
+  border:none;
+  cursor:pointer;
+  font-size: 3rem;
+  position: absolute;
+  top:0;
+  height:100%;
+  width:20%;
+  transition: .3s;
+}
+.left{
+  left:0;
+}
+.right{
+  right:0;
 }
 
 .carousel-inner article {
   display:none;
-  border: 5px dashed yellow;
+  padding-bottom:2rem;
 }
 
 .carousel-inner article.active {
@@ -162,16 +184,15 @@ h2, h3, h4, p {
 }
 
 .carousel-inner article header{
-  border: 5px dashed green;
-  padding:.5rem .75rem;
+  padding:1.25rem 1rem;
 }
 
 .carousel-inner article .content{
-  border: 5px dashed red;
+  display:flex;
+  justify-content: center;
 }
 
 .carousel-inner article .content img{
-  border: 5px dashed blue;
   max-width: 100%;
 }
 
@@ -217,6 +238,13 @@ footer{
 
   nav ul li{
     margin:0;
+  }
+
+
+  .carousel-outer button:hover{
+    /* background-color: var(--font-color); */
+    background-color: rgba(0, 0, 0, 0.561);
+    color:var(--font-light-color)
   }
 
 }
