@@ -140,6 +140,7 @@ h2, h3, h4, p {
   color: var(--font-light-color);
   background-color: var(--shadow-color);
   margin:1rem;
+  /* zaokrąglenie krawędzi */
   border-radius: 7px;
   padding-bottom: 1px;
 }
@@ -151,16 +152,21 @@ h2, h3, h4, p {
 
 .carousel-outer {
   background-color: var(--font-color);
+  /* pozycja, do której dostosowują się dzieci w pozycji absolutnej */
   position: relative;
   border-radius: 7px;
   margin:1rem;
 }
 
 .carousel-outer button{
+  /* ściągamy domyślny kolor tła buttona */
   background-color: transparent;
+  /* ściągamy domyślny border buttona */
   border:none;
+  /* wyświetlamy kursor "klikalny" na elemencie */
   cursor:pointer;
   font-size: 3rem;
+  /* dostosowuje się do najbliższego rodzica niebędącego w pozycji statycznej (domyślnej) */
   position: absolute;
   top:0;
   height:100%;
@@ -175,11 +181,13 @@ h2, h3, h4, p {
 }
 
 .carousel-inner article {
+  /* ukrywamy wszystkie artykuły */
   display:none;
   padding-bottom:2rem;
 }
 
 .carousel-inner article.active {
+  /* wyświetlamy tylko te artykuły które mają klasę .active */
   display:block;
 }
 
@@ -193,6 +201,7 @@ h2, h3, h4, p {
 }
 
 .carousel-inner article .content img{
+  /* nie pozwalamy zdjęciu na wyświetlanie szersze niż rodzic */
   max-width: 100%;
 }
 
