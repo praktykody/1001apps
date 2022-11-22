@@ -25,3 +25,14 @@ rArr.addEventListener('click', function () {
   nextActiveElement.classList.add('active')
 
 })
+
+const lArr = document.querySelector('.left')
+lArr.addEventListener('click', () => {
+
+  const activeElement = document.querySelector('.active');
+  activeElement.classList.remove('active')
+
+  let previousActiveElement = activeElement.previousElementSibling ? activeElement.previousElementSibling : document.querySelector('.carousel-inner').lastElementChild;
+  previousActiveElement.classList.add('active')
+
+})
