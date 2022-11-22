@@ -43,36 +43,53 @@
 
   </nav>
 
+  <!-- tematycznie zgrupowany content -->
   <section class="carousel-section">
-
+    
+    <!-- sekcja nagłówkowa całego section -->
     <header>
+      <!-- tytuł -->
       <h2>Lorem</h2>
+      <!-- opis -->
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt aliquid sapiente, harum reprehenderit nulla perferendis?
       </p>
     </header>
 
+    <!-- rodzic całej karuzeli -->
     <div class="carousel-outer">
 
+      <!-- element zwierający wszystkie slajdy -->
       <div class="carousel-inner">
 
-        <article class="active">
+        <!-- .active wyświetla element na stronie -->
+        <arti cle class="active">
+          <!-- sekcja nagłówkowa -->
           <header>
+            <!-- tytuł -->
             <h3>Lorem 1</h3>
+            <!-- opis -->
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos, sint!</p>
           </header>
+
+          <!-- rodzic img -->
           <div class="content">
-            <img src="https://taicoders.github.io/images/css_units_em.webp" alt="Lorem photo">
+            <!-- w src podajemy: 
+              - ścieżkę względną względem pliku w którym się znajdujemy
+              - lub ścieżkę bezwzględną (jeśli pobieramy zdjęcie z internetu)  -->
+            <img src="/img/office.webp" alt="Lorem photo">
           </div>
+
         </article>
 
+        <!-- elementy nie są widoczne bez klasy .active -->
         <article>
           <header>
             <h3>Lorem 2</h3>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos, sint!</p>
           </header>
           <div class="content">
-            <img src="https://taicoders.github.io/images/css_units_em.webp" alt="Lorem photo">
+            <img src="/img/hacker.webp" alt="Lorem photo">
           </div>
         </article>
 
@@ -82,7 +99,7 @@
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos, sint!</p>
           </header>
           <div class="content">
-            <img src="https://taicoders.github.io/images/css_units_em.webp" alt="Lorem photo">
+            <img src="/img/code.webp" alt="Lorem photo">
           </div>
         </article>
 
