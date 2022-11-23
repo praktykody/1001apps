@@ -19,6 +19,7 @@ body {
   background-color: var(--background-color);
   /* usuń domyślny margines body */
   margin:0;
+  overflow-x: hidden;
 }
 
 nav {
@@ -172,6 +173,7 @@ h2, h3, h4, p {
   height:100%;
   width:20%;
   transition: .3s;
+  z-index: 1;
 }
 .left{
   left:0;
@@ -186,9 +188,36 @@ h2, h3, h4, p {
   padding-bottom:2rem;
 }
 
+@keyframes slideInRight {
+  0%{ 
+    right: -100%;
+  }
+  100%{
+    right:0;
+  }
+}
+
+@keyframes slideInLeft {
+  0%{ 
+    left: -100%;
+  }
+  100%{
+    left:0;
+  }
+}
+
+.slideLeft {
+  animation: .25s slideInLeft ease-in;
+}
+
+.slideRight {
+  animation: .25s slideInRight ease-in;
+}
+
 .carousel-inner article.active {
   /* wyświetlamy tylko te artykuły które mają klasę .active */
   display:block;
+  position: relative;
 }
 
 .carousel-inner article header{
