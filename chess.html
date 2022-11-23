@@ -55,7 +55,7 @@
   </footer>
 
 <script>
-  axios.get('https://fide-ratings.herokuapp.com/api/players/')
+  axios.get('/api/players.json')
   .then( res => {
     let data = JSON.parse( res.data )
     data = data.sort(( a, b ) => b.RRtng - a.RRtng )
@@ -67,8 +67,7 @@
         <td>${ ! player.Name ? '-' : player.Name }</td>
         <td>${ ! player['B-day'] ? '-' : new Date().getFullYear() - player['B-day'] }</td>
         <td>${ ! player.Fed ? '-' : player.Fed }</td>
-        <td class='text-end'>${ player.RRtng }</td>
-      `
+        <td class='text-end'>${ player.RRtng }</td>`
       tbody.append( tr )
     }
     document.querySelector('table tbody').innerHTML = ""
