@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot</title>
+  
+  <!-- Google Fonts pobrane z https://fonts.google.com/specimen/Ubuntu -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  
+  <!-- AXIOS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.0/axios.min.js" integrity="sha512-OdkysyYNjK4CZHgB+dkw9xQp66hZ9TLqmS2vXaBrftfyJeduVhyy1cOfoxiKdi4/bfgpco6REu6Rb+V2oVIRWg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+<style>
+:root{
+  --foreground-color:#fff;
+  --background-color:burlywood;
+  --first-color: rgb(84, 84, 216);
+  --second-color: rgba(128, 128, 128, 0.673);
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Ubuntu', sans-serif;
+  background-color: var(--background-color);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height:100vh;
+  margin:0;
+}
+
+.chat-outer{
+  height:70vh;
+  width:40vw;
+  display:flex;
+  flex-direction: column;
+  background-color: var(--first-color);
+  padding:10px;
+  border-radius: 10px;
+}  
+
+.chat-inner{
+  flex:1;
+  border-radius: 5px;
+  background-color: var(--foreground-color);
+  margin-bottom: 10px;
+  overflow-y:scroll;
+}  
+
+.input{
+  background-color:var(--foreground-color);
+  padding:5px;
+  border-radius: 5px;
+  display:flex;
+  justify-content: space-between;
+}
+
+#input, #button{
+  padding:5px 10px;
+  border:none;
+  outline:none;
+}
+
+#button{
+  color:var(--foreground-color);
+  background-color: var(--first-color);
+  border-radius:10px;
+  cursor:pointer;
+  padding:10px 15px;
+}
+
+/* kontener wiadomości */
+.message{
+  margin:10px;
+  display: flex;
+}
+
+/* dymki wewnątrz kontenera */
+.message > div{
+  background-color: var(--second-color);
+  padding:15px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* konterner mojej wiadomości */
+.message.i{
+  justify-content: end;
+}
+
+/* dymek mojej wiadmości */
+.message.i > div{
+  background-color: var(--first-color);
+  color:var(--foreground-color);
+}
+
+@media ( max-width: 768px ){
+  .chat-outer{
+    height:100vh;
+    width:100vw;
+    border-radius:0;
+  }
+}
+
+</style>
+
+<div class="chat-outer">
+  <div class="chat-inner">
+  </div>
+  <div class="input">
+    <input type="text" id="input" placeholder="Wpisz tutaj..." value="Hello">
+    <button id="button">WYŚLIJ</button>
+  </div>
+
+</div>
+
+<script>
+const sendToAI = async () => {
+  const text = document.querySelector('#input')
+  if(text.value == "") { return }
+  const encodeText = encodeURIComponent(text.value)
+  pushMessage(text.value)
+  text.value = ""
+
+  const res = await axios.get('https://ai-chatbot.p.rapidapi.com/chat/free?uid=Antek&message=' + encodeText, {
+    headers: {
+      'X-RapidAPI-Key': CHAT_API_KEY,
+      'X-RapidAPI-Host': 'ai-chatbot.p.rapidapi.com'
+    }
+  })
+
+  // ! FOR TESTS
+  // const res = {
+  //     "data": {
+  //         "chatbot": {
+  //             "message": "When the world will end?",
+  //             "response": "And then what happened?"
+  //         }
+  //     },
+  // }
+
+  pushMessage(res.data.chatbot.response, 'ai')
+}
+
+const pushMessage = ( text, who = 'i' ) => {
+  const message = document.createElement('div')
+  message.className = "message " + who
+  message.innerHTML = `<div>${ text }</div>`
+
+  const chatInner = document.querySelector('.chat-inner')
+  chatInner.append( message )
+  chatInner.scrollTop = chatInner.scrollHeight
+} 
+
+document.querySelector('#button').addEventListener('click', sendToAI)
+window.addEventListener('keydown', event => {
+  if(event.key == "Enter"){
+    sendToAI()
+  }
+})
+
+</script>
+</body>
+</html>
