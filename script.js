@@ -1,3 +1,4 @@
+// PRZYCISKI KARUZELI
 // stałą rArr przypisujemy do klasy .right pobranej z dokumentu HTML (stała rArr jest buttonem .right)
 const rArr = document.querySelector('.right')
 // do pobranego buttona przyczepiamy słuchacza wydarzeń, który pobiera 2 argumenty:
@@ -35,4 +36,21 @@ lArr.addEventListener('click', () => {
   let previousActiveElement = activeElement.previousElementSibling ? activeElement.previousElementSibling : document.querySelector('.carousel-inner').lastElementChild;
   previousActiveElement.classList.add('active')
 
+})
+
+// CHOWANIE MENU PO KLIKNIĘCIU GDZIEKOLWIEK
+document.addEventListener('click', event => {
+  const toggler = document.querySelector("#toggler")
+  const menu = document.querySelector("#menu")
+  const label = document.querySelector("#label")
+
+  if( // jeżeli
+    // nie kliknąłem na label      i   nie kliknąłem na toggler
+    ( !event.path.includes(label)  &&  !event.path.includes(toggler) )
+    // i jednocześnie nie kliknąłem na menu
+    && !event.path.includes(menu)
+  ){
+    // to schowaj menu
+    toggler.checked = false
+  }
 })
