@@ -36,11 +36,12 @@ body{
   align-items: center;
   height:100vh;
   margin:0;
+  flex-direction: column;
 }
 
 .chat-outer{
   height:70vh;
-  width:40vw;
+  width:70vw;
   display:flex;
   flex-direction: column;
   background-color: var(--first-color);
@@ -105,13 +106,40 @@ body{
 
 @media ( max-width: 768px ){
   .chat-outer{
-    height:100vh;
-    width:100vw;
-    border-radius:0;
+    width:90vw;
   }
 }
 
+.interlocutors{
+  display:flex;
+  gap:15px;
+}
+.person h2{
+  cursor:pointer;
+  margin:0;
+}
+
+.person{
+  padding:5px 20px;
+  margin-bottom:1rem;
+}
+
+.active{
+  border:5px groove red;
+}
 </style>
+
+<div class="interlocutors">
+
+  <div class="person active">
+    <h2>John</h2>
+  </div>
+  
+  <div class="person">
+    <h2>Joanna</h2>
+  </div>
+
+</div>
 
 <div class="chat-outer">
   <div class="chat-inner">
@@ -124,31 +152,41 @@ body{
 </div>
 
 <script>
+let aiName = 'John'
+document.querySelectorAll('.person').forEach( person => {
+  const h2 = person.querySelector('h2')
+  h2.addEventListener('click', () => {
+    aiName = h2.innerText
+    document.querySelectorAll('.person').forEach( person => {
+      person.classList.remove('active')
+    })
+    person.classList.add('active')
+  })
+})
+
 const sendToAI = async () => {
   const text = document.querySelector('#input')
   if(text.value == "") { return }
-  const encodeText = encodeURIComponent(text.value)
   pushMessage(text.value)
   text.value = ""
-
-  const res = await axios.get('https://ai-chatbot.p.rapidapi.com/chat/free?uid=Antek&message=' + encodeText, {
+  const res = await axios.post('https://waifu.p.rapidapi.com/path', {
+    user_id: 'sample_user_id',
+    message: text,
+    from_name: 'Antek',
+    to_name: aiName,
+    situation: 'internet chat',
+    translate_from: 'auto',
+    translate_to: 'auto'
+  },{
     headers: {
-      'X-RapidAPI-Key': CHAT_API_KEY,
-      'X-RapidAPI-Host': 'ai-chatbot.p.rapidapi.com'
-    }
+      'content-type': 'application/json',
+      'X-RapidAPI-Key': '46fd55d0d9msh018a8f3a3ab9a3bp1bdcaejsn6cdbacd7a60a',
+      'X-RapidAPI-Host': 'waifu.p.rapidapi.com'
+    },
   })
 
-  // ! FOR TESTS
-  // const res = {
-  //     "data": {
-  //         "chatbot": {
-  //             "message": "When the world will end?",
-  //             "response": "And then what happened?"
-  //         }
-  //     },
-  // }
-
-  pushMessage(res.data.chatbot.response, 'ai')
+  console.log({ res })
+  pushMessage( res.data, 'ai' )
 }
 
 const pushMessage = ( text, who = 'i' ) => {
