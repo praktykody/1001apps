@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Famework</title>
+
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+  <!-- axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+  <nav class="navbar bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img 
+          src="https://w1.pngwing.com/pngs/717/864/png-transparent-knight-chess-chess-piece-queen-pawn-bishop-and-knight-checkmate-white-and-black-in-chess-rook.png" 
+          alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+        <h1 style="display:inline;" class="m-0">Chess</h1>
+      </a>
+    </div>
+  </nav>
+
+  <div class="container border my-2 mx-auto p-3 bg-dark text-light">
+    <h2>TOP Players</h2>
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Federation</th>
+          <th scope="col" class="text-end">Ranking FIDE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th colspan="5" class="text-center py-5">
+            loading...
+          </th>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <footer class="bg-dark text-light p-2">
+    <p class="m-0">Made with 🧡 by Antek</p>
+  </footer>
+
+<script>
+  axios.get('/api/players.json')
+  .then( res => {
+    let data = JSON.parse( res.data )
+    data = data.sort(( a, b ) => b.RRtng - a.RRtng )
+    const tbody = document.createElement('tbody')
+    for( [ index, player ] of data.entries() ) {
+      const tr = document.createElement('tr')
+      tr.innerHTML = `
+        <td>${ index + 1 }</td>
+        <td>${ ! player.Name ? '-' : player.Name }</td>
+        <td>${ ! player['B-day'] ? '-' : new Date().getFullYear() - player['B-day'] }</td>
+        <td>${ ! player.Fed ? '-' : player.Fed }</td>
+        <td class='text-end'>${ player.RRtng }</td>`
+      tbody.append( tr )
+    }
+    document.querySelector('table tbody').innerHTML = ""
+    document.querySelector('table').append(tbody)
+  })
+</script>  
+</body>
+</html>

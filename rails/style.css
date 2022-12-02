@@ -1,0 +1,288 @@
+:root{
+  --background-color: #101F61;
+  --foreground-color: #1D38AD;
+  --shadow-color: #505363;
+  --font-color: #000;
+  --font-light-color:#fff;
+
+  --shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+/* * - selektor biorący pod uwagę wszystko! */
+* {
+  /* jeśli coś się rozjeżdza na stronie - użyj box sizing */
+  box-sizing: border-box;
+}
+
+body { 
+  font-family: 'Ubuntu', sans-serif;
+  background-color: var(--background-color);
+  /* usuń domyślny margines body */
+  margin:0;
+  overflow-x: hidden;
+}
+
+nav {
+  background-color: var(--foreground-color);
+  box-shadow: var(--shadow);
+  display:flex; /* ustawia dzieci jeden obok drugiego */
+  justify-content: space-between; /* dodaje przestrzeń pomiędzy dziećmi na osi X */
+  align-items: center; /* ustawia dzieci na środku osi Y */
+
+  position:sticky; /* przykleja się do ekranu jeśli jest spełniony warunek */
+  top:0; /* warunek przyklejania się poz. sticky */
+
+  padding: 0 10px;
+
+  z-index:2;
+}
+
+/* wszystkie tagi "a" mające "nav"a jako przodka */
+nav a {
+  color: var(--font-light-color);
+  text-decoration: none;
+}
+
+nav a h1 {
+  padding:0; /* przesrzeń pomiędzy treścią elementu a jego granicą (border) */
+  margin:0; /* przestrzeń wokół granic elementu */
+}
+
+nav ul {
+  background-color: var(--shadow-color);
+  list-style: none; /* usuwa markery ( kółeczka przed elementem) */
+  margin:0;
+  padding:0;
+  
+  /* WŁAŚCIWOŚCI HAMBURGERA */
+  position: fixed; /* przykleja się na stałe do ekranu */
+  width:40vw; /* szerkość to 40% szerokości okna przeglądarki */
+  right:calc( -40vw - 2px ); /* odsuwamy w prawo od prawej krawędzi strony o obliczoną ilość (szerokość elementu - border) (ukrywamy go) */
+  /* top:4rem; odsuwamy menu od góry */
+  top: calc( 2em + 20px ); /* odsuń menu od góry o wielkość labela z marginesem */
+  height:calc( 100vh - ( 2em + 20px ) ); /* ustaw wysokość, aby zajmowała cały ekran poza odsunięciem z góry */
+  transition: .5s;
+}
+
+nav ul li {
+  color:var(--font-light-color);
+  text-align: right;
+  /* top right bottom left */
+  /* margin:5px 10px 5px 10px; */
+  /*      y   x   */
+  padding:5px 10px;
+  margin:10px;
+}
+
+/* HAMBURGER ELEMENTS */
+nav label{
+  border:2px solid var(--font-light-color);
+  border-radius: 5px;
+  width: 2em; /* rozmiar większy od czcionki H1 */
+  height: 2em; /* taki sam rozmiar robi kwadrat */
+  margin:10px 0;
+  position: relative; /* utrzymuje potomków z pozycjami absolutnymi */
+  cursor:pointer; /* po nakierowaniu myszą pokazuje rączkę */
+}
+
+nav label div{ /* style dla wszytkich kresek w hamburgerze ( wspólne ) */
+  height:3px;
+  border-radius: 3px; /* zaokrąglenie krawędzi */
+  background-color: var(--font-light-color);
+  position: absolute; /* uniezależniamy się od rodzeństwa i dostosowujemy się do najbliższego przodka nie będącego w pozyji statyznej */
+  width:80%; /* szerokość na 80% RODZICA */
+  left:10%; /* odsuwamy od lewej strony o 10% szerokości RODZICA */
+  transition: .3s; /* jeśli element będzie się zmieniał (odwracał), niech trwa mu to pół sekundy (.5 = 0.5) */
+}
+/* Każda z kresek hamburgera osobno: */
+/* nth-child - określa dziecko po indexie ( kolejności pojawienia się w dokumencie ) */
+nav label div:nth-child(1){
+  top:calc( 25% - 1.5px );  
+}
+
+nav label div:nth-child(2){
+  top:calc( 50% - 1.5px ); /* ustawiamy środek elementu na środku rodzica ( w osi Y ) (1.5px to połowa wysokości kreski )*/
+}
+
+nav label div:nth-child(3){
+  top:calc( 75% - 1.5px );
+}
+
+/* jeśli odnosimy się do elemetu HTML z ID, to używamy "#"  */
+#toggler{
+  display:none; /* element jest na stronie, ale jest niewidoczny i nie wpływa na inne elementy */
+}
+
+/* #toggler:checked ~ - może wpłynąć na rodzeństwo togglera  renderujące się po nim, w momencie kiedy jest zaznazony  */
+#toggler:checked ~ ul { /* zmienamy styl "ul" tylko wtedy, kiedy toggler jest włączony  */
+  right:0; /* przyklej go do prawej krawędzi strony */
+}
+/* poierwsze dziecko labela przy włączonym togglerze */
+#toggler:checked ~ label div:nth-child(1){
+  transform: rotate(45deg); /* obrót elementu o 45 stopni */
+  top:calc( 50% - 1.5px );
+}
+
+#toggler:checked ~ label div:nth-child(2){
+  opacity:0; /* zmieniamy widoczność elementu na 0 (niewidoczny), wartość 1 daje widoczność maksymalną */
+}
+
+#toggler:checked ~ label div:nth-child(3){
+  transform: rotate(135deg);
+  top:calc( 50% - 1.5px );
+}
+
+/* bierze pod uwagę wszystkie wymienione selektory */
+h2, h3, h4, p {
+  margin:0;
+}
+
+.carousel-section {
+  color: var(--font-light-color);
+  background-color: var(--shadow-color);
+  margin:1rem;
+  /* zaokrąglenie krawędzi */
+  border-radius: 7px;
+  padding-bottom: 1px;
+}
+
+/* ">" - bierze pod uwagę tylko header który jest bezpośrednim dzieckiem .carousel-section  */
+.carousel-section > header {
+  padding:.75rem 1rem;
+}
+
+.carousel-outer {
+  background-color: var(--font-color);
+  /* pozycja, do której dostosowują się dzieci w pozycji absolutnej */
+  position: relative;
+  border-radius: 7px;
+  margin:1rem;
+}
+
+.carousel-outer button{
+  /* ściągamy domyślny kolor tła buttona */
+  background-color: transparent;
+  /* ściągamy domyślny border buttona */
+  border:none;
+  /* wyświetlamy kursor "klikalny" na elemencie */
+  cursor:pointer;
+  font-size: 3rem;
+  /* dostosowuje się do najbliższego rodzica niebędącego w pozycji statycznej (domyślnej) */
+  position: absolute;
+  top:0;
+  height:100%;
+  width:20%;
+  transition: .3s;
+  z-index: 1;
+}
+.left{
+  left:0;
+}
+.right{
+  right:0;
+}
+
+.carousel-inner article {
+  /* ukrywamy wszystkie artykuły */
+  display:none;
+  padding-bottom:2rem;
+}
+
+@keyframes slideInRight {
+  0%{ 
+    right: -100%;
+  }
+  100%{
+    right:0;
+  }
+}
+
+@keyframes slideInLeft {
+  0%{ 
+    left: -100%;
+  }
+  100%{
+    left:0;
+  }
+}
+
+.slideLeft {
+  animation: .25s slideInLeft ease-in;
+}
+
+.slideRight {
+  animation: .25s slideInRight ease-in;
+}
+
+.carousel-inner article.active {
+  /* wyświetlamy tylko te artykuły które mają klasę .active */
+  display:block;
+  position: relative;
+}
+
+.carousel-inner article header{
+  padding:1.25rem 1rem;
+}
+
+.carousel-inner article .content{
+  display:flex;
+  justify-content: center;
+}
+
+.carousel-inner article .content img{
+  /* nie pozwalamy zdjęciu na wyświetlanie szersze niż rodzic */
+  max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+  border:2px dashed teal;
+  margin-top:200vh;
+}
+
+
+/* wyświetlanie na komputerze */
+@media ( min-width: 768px ){
+
+  nav{
+    padding:1.5rem 3rem;
+  }
+
+  nav label { 
+    display:none;
+  }
+
+  nav ul {
+    position: static;
+    width: unset;
+    height: unset;
+    display: flex;
+    background-color: transparent;
+  }
+
+  nav ul li{
+    margin:0;
+  }
+
+
+  .carousel-outer button:hover{
+    /* background-color: var(--font-color); */
+    background-color: rgba(0, 0, 0, 0.561);
+    color:var(--font-light-color)
+  }
+
+}
