@@ -27,4 +27,4 @@
 2. Wybierz gałąź master (wciągnij wszytkie zmiany z mastera na swoją gałąź jednocześnie nie zmieniając wprowadzonych zmian na gałęzi)  
 
 ## MERGE WHOLE REPO
-git subtree add --prefix=rails https://github.com/apietryga/apietryga.github.io master
+git subtree add --prefix=portfolio https://github.com/apietryga/apietryga.github.io master
