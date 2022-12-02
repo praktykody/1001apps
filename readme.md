@@ -25,3 +25,6 @@
 **PRZED WPROWADZENIEM TYCH ZMIAN KONIECZNIE ZRÓB COMMIT**
 1. Przejdź na swoją branch (gałąź), wejdź do source control -> trzy kropeczki nad message (komunikat) -> branch (gałąź) -> merge branch (scal gałąź)
 2. Wybierz gałąź master (wciągnij wszytkie zmiany z mastera na swoją gałąź jednocześnie nie zmieniając wprowadzonych zmian na gałęzi)  
+
+## MERGE WHOLE REPO
+git subtree add --prefix=rails https://github.com/apietryga/apietryga.github.io master
